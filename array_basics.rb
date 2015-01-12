@@ -18,10 +18,8 @@ class SimpleArray
   def join_new(insertion)
     (@data.map do |element|
       if element != @data[-1]
-        # binding.pry
         element += insertion
       else element = element
-        # binding.pry
       end
     end).reduce(:+)
   end

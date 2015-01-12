@@ -7,7 +7,7 @@ class SimpleString
   end
 
   def length_new
-    @data.chars.count { |letter| letter }
+    @data.chars.count
   end
 
   def end_with_new?(ends_with)
@@ -16,7 +16,7 @@ class SimpleString
 
   block_end_string.each do |letter|
     count += 1
-    if letter == @data.chars[-count]
+    if letter == @data[-count]
       true
     else
       return false
@@ -31,12 +31,21 @@ class SimpleString
       return ""
     else
     return @data.tr(lower_alpha, upper_alpha)
+    end
   end
+
+  def lowercase_new
+    lower_alpha = ("a".."z").to_a.join
+    upper_alpha = ("A".."Z").to_a.join
+    if @data == ''
+      return ""
+    else
+      return @data.tr(upper_alpha, lower_alpha)
+    end
   end
 
   def plus(to_be_added)
-    sum = [@data.chars, to_be_added.data.chars].join
-    sum
+    [@data.chars, to_be_added.data.chars].join
   end
 
 end
