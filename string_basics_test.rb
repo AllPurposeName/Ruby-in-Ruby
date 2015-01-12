@@ -41,7 +41,7 @@ class SimpleStringTest < Minitest::Test
   def test_it_can_implement_plus
     a_string = SimpleString.new("hello")
     second_string = SimpleString.new("BYE")
-    assert "helloBYE", a_string + second_string
+    assert "helloBYE", a_string.plus(second_string)
   end
 
 end

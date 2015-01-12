@@ -34,7 +34,7 @@ class SimpleString
   end
   end
 
-  def +(to_be_added)
+  def plus(to_be_added)
     sum = [@data.chars, to_be_added.data.chars].join
     sum
   end
